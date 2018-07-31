@@ -28,8 +28,24 @@ $ python logAnalysis.py
 
 ## Function Calls to Modify Requests
 
-### getMostPopularArticles()
+This version of the program currently answers the following questions:
+1. What are the most popular three articles of all time?
+2. Who are the most popular article authors of all time?
+3. On which days did more than 1% of requests lead to errors?
 
-### getMostPopularAuthors()
+Functions created to answer these questions are designed in a generic manner. You may edit below function calls to get answers to different versions of these questions.
 
-### getErrorousDays()
+### getMostPopularArticles(theDB, theLimit)
+* theDB	: connection to Postgre SQL database *news*
+* theLimit : number of top articles to be viewed. Set this value to 0 (zero) to get the whole list
+
+### getMostPopularAuthors(theDB, theLimit)
+* theDB	: connection to Postgre SQL database *news*
+* theLimit : number of top authors to be viewed. Set this value to 0 (zero) to get the whole list
+
+### getErrorousDays(theDB, theErrorRatio)
+* theDB	: connection to Postgre SQL database *news*
+* theErrorRatio : Error ratio threshold that you want to see the days with more errors. Set this value to 0.01 to see days with more than 1% errors
+
+## License
+logAnalysis is Copyright © 2018-2020 . It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
